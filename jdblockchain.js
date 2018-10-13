@@ -44,3 +44,16 @@ class BlockChain {
   //the hash of the previous block
   //calculate the hash of the current block
 }
+
+//creating two new blocks
+let block1 = new Block(1, '02/02/2018', { mybalance: 100 });
+let block2 = new Block(2, '03/01/2018', { mybalance: 50 });
+
+//create a new block
+let myBlockChain = new BlockChain();
+
+//adding the new blocks to the blockchain
+myBlockChain.addBlock(block1);
+myBlockChain.addBlock(block2);
+
+console.log(JSON.stringify(myBlockChain, null, 4));
