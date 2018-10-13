@@ -29,4 +29,18 @@ class BlockChain {
   createGenesisBlock() {
     return new Block(0, '01/01/2018', 'This is the genesis block', '0');
   }
+
+  getLatestBlock() {
+    return this.chain[this.chain.length - 1];
+  }
+
+  addBlock(newBlock) {
+    newBlock.previousHash = this.getLatestBlock().hash;
+    newBlock.hash = newBlock.calculateHash();
+    this.chain.push(newBlock);
+  }
+
+  //new block object
+  //the hash of the previous block
+  //calculate the hash of the current block
 }
